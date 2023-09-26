@@ -1,3 +1,6 @@
 p {
-  color: red;
+  color: black;
+  background-color: pink;
+  padding: 20px;
+  border: 2px solid darkred
 }

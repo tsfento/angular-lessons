@@ -21,7 +21,7 @@ export class ServersComponent {
   notEmpty: boolean = false;
 
   secretVisible: boolean = false;
-  clicks: number[] = [];
+  clicks: Date[] = [];
   clickNumber: number = 0;
 
   constructor() {
@@ -47,7 +47,8 @@ export class ServersComponent {
   logClicks() {
     // this.secretVisible = !this.secretVisible;
     this.clickNumber++;
-    this.clicks.push(this.clickNumber);
+    // this.clicks.push(this.clickNumber);
+    this.clicks.push(new Date());
   }
 
   // setColor() {

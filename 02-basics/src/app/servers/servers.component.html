@@ -24,9 +24,9 @@
 <hr>
 <button class="btn btn-primary" (click)="secretVisible = !secretVisible" (click)="logClicks()">Display Details</button>
 <p *ngIf="secretVisible">Secret Password = tuna</p>
-<div
-  *ngFor="let click of clicks"
-  [ngStyle]="{backgroundColor: click >= 5 ? 'blue' : 'transparent'}"
-  [ngClass]="{fifthClick: click >= 5}">
+<div class="text-center"
+  *ngFor="let click of clicks; let i = index"
+  [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+  [ngClass]="{fifthClick: i >= 4}">
   {{ click }}
 </div>

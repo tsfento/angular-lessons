@@ -50,7 +50,7 @@ export class ServersComponent {
     this.clicks.push(this.clickNumber);
   }
 
-  setColor() {
-    return this.clicks.length >= 5 ? 'blue' : 'white';
-  }
+  // setColor() {
+  //   return this.clickNumber >= 5 ? 'blue' : 'transparent';
+  // }
 }

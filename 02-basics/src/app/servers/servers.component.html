@@ -26,7 +26,7 @@
 <p *ngIf="secretVisible">Secret Password = tuna</p>
 <div
   *ngFor="let click of clicks"
-  [ngStyle]="{backgroundColor: setColor()}"
-  [ngClass]="{fifthClick: clicks.length >= 5}">
+  [ngStyle]="{backgroundColor: click >= 5 ? 'blue' : 'transparent'}"
+  [ngClass]="{fifthClick: click >= 5}">
   {{ click }}
 </div>

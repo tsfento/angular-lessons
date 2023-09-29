@@ -7,7 +7,8 @@ import { Ingredient } from '../shared/ingredient.model';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent {
-  ingredients = [
-    new Ingredient('eggs', 2)
+  ingredients: Ingredient[] = [
+    new Ingredient('Eggs', 2),
+    new Ingredient('Shells', 12)
   ];
 }

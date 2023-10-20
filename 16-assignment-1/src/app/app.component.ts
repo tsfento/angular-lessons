@@ -7,7 +7,8 @@ import { Component, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   @ViewChild('f') signupForm;
-  defaultSub = 'advanced';
+  subscriptions = ['Basic', 'Advanced', 'Pro'];
+  defaultSub = 'Advanced';
   submitted: boolean = false;
   userSub = {
     email: '',

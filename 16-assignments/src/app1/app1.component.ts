@@ -1,9 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app1-root',
+  templateUrl: './app1.component.html',
+  styleUrls: ['./app1.component.css']
 })
 export class AppComponent {
   @ViewChild('f') signupForm;

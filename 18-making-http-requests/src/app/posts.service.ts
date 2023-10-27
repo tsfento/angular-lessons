@@ -36,7 +36,7 @@ export class PostsService {
       }),
       catchError(errorRes => {
         // return throwError(errorRes); // deprecated
-        throw new Error(errorRes); // rxjs suggestion
+        throw new Error(errorRes.message); // rxjs suggestion
       })
     );
   }

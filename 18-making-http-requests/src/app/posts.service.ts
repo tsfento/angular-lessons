@@ -32,4 +32,10 @@ export class PostsService {
         return postsArray;
       }));
   }
+
+  deletePosts() {
+    return this.http.delete(
+      'https://ng-complete-guide-ba783-default-rtdb.firebaseio.com/posts.json'
+      );
+  }
 }

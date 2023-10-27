@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     this.postsService.fetchPosts().subscribe( posts => {
       this.isFetching = false;
       this.loadedPosts = posts;
-  });
+    });
   }
 
   onCreatePost(postData: Post) {
@@ -34,10 +34,13 @@ export class AppComponent implements OnInit {
     this.postsService.fetchPosts().subscribe( posts => {
       this.isFetching = false;
       this.loadedPosts = posts;
-  });
+    });
   }
 
   onClearPosts() {
     // Send Http request
+    this.postsService.deletePosts().subscribe(() => {
+      this.loadedPosts = [];
+    });
   }
 }

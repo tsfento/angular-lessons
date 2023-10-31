@@ -9,9 +9,10 @@ import { Subject } from "rxjs";
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
-  private recipes: Recipe[] = [
-    new Recipe('Meatloaf', 'A tasty meatloaf.', 'https://www.spendwithpennies.com/wp-content/uploads/2022/12/1200-The-Best-Meatloaf-Recipe-SpendWithPennies-800x1200.jpg', [new Ingredient('Beef', 1), new Ingredient('Ketchup', 1)])
-  ];
+  // private recipes: Recipe[] = [
+  //   new Recipe('Meatloaf', 'A tasty meatloaf.', 'https://www.spendwithpennies.com/wp-content/uploads/2022/12/1200-The-Best-Meatloaf-Recipe-SpendWithPennies-800x1200.jpg', [new Ingredient('Beef', 1), new Ingredient('Ketchup', 1)])
+  // ];
+  private recipes: Recipe[] = [];
 
   constructor(private shoppingListService: ShoppingListService) {}
 

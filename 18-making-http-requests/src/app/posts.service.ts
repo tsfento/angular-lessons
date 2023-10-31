@@ -1,7 +1,7 @@
 import { HttpClient, HttpEventType, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Post } from "./post.model";
-import { Subject, map, catchError, tap } from "rxjs";
+import { Subject, map, catchError, tap, throwError } from "rxjs";
 
 @Injectable({providedIn: 'root'})
 export class PostsService {
@@ -48,7 +48,8 @@ export class PostsService {
       }),
       catchError(errorRes => {
         // return throwError(errorRes); // deprecated
-        throw new Error(errorRes.message); // rxjs suggestion
+        // throw new Error(errorRes.message); // original suggestion
+        return throwError(() => errorRes); // change author suggestion
       })
     );
   }

@@ -7,6 +7,7 @@ import { RecipeStartComponent } from "./recipes/recipe-start/recipe-start.compon
 import { RecipeEditComponent } from "./recipes/recipe-edit/recipe-edit.component";
 import { DataStorageService } from "./shared/data-storage.service";
 import { RecipeService } from "./recipes/recipe.service";
+import { AuthComponent } from "./auth/auth.component";
 
 const recipeResolver: ResolveFn<any> =
     (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
     { path: ':id/edit', component: RecipeEditComponent, resolve: { data: recipeResolver } },
   ] },
   { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'auth', component: AuthComponent },
 ];
 
 @NgModule({

@@ -17,7 +17,7 @@ export interface AuthResponseData {
   providedIn: 'root'
 })
 export class AuthService {
-  apiKey: string = '';
+  apiKey: string = 'AIzaSyDGWDLSVy0QyO4uiHsZCwaciwrJG870WJ4';
   user = new BehaviorSubject<User>(null);
 
   constructor(private http: HttpClient) {}

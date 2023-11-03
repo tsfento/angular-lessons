@@ -8,6 +8,7 @@ import { RecipeEditComponent } from "./recipes/recipe-edit/recipe-edit.component
 import { DataStorageService } from "./shared/data-storage.service";
 import { RecipeService } from "./recipes/recipe.service";
 import { AuthComponent } from "./auth/auth.component";
+import { AuthGuard } from "./auth/auth.guard";
 
 const recipeResolver: ResolveFn<any> =
     (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
@@ -22,7 +23,9 @@ const recipeResolver: ResolveFn<any> =
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full' },
-  { path: 'recipes', component: RecipesComponent, children: [
+  { path: 'recipes', component: RecipesComponent,
+    canActivate: [AuthGuard],
+    children: [
     { path: '', component: RecipeStartComponent },
     { path: 'new', component: RecipeEditComponent },
     { path: ':id', component: RecipeDetailComponent, resolve: { data: recipeResolver } },

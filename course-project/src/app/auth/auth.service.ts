@@ -104,7 +104,7 @@ export class AuthService {
     console.log(errorRes.error.error.message);
     switch (errorRes.error.error.message) {
       case 'EMAIL_EXISTS':
-        errorMessage = 'E-mail already exists.';
+        errorMessage = 'E-mail or password incorrect.';
         break;
       case 'INVALID_LOGIN_CREDENTIALS':
         errorMessage = 'E-mail or password incorrect.';

@@ -4,6 +4,7 @@ import { LoadingSpinnerComponent } from "./loading-spinner/loading-spinner.compo
 import { PlaceholderDirective } from "./placeholder.directive";
 import { DropDownDirective } from "./dropdown.directive";
 import { CommonModule } from "@angular/common";
+import { LoggingService } from "../loggin.service";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CommonModule } from "@angular/common";
     PlaceholderDirective,
     DropDownDirective,
     CommonModule
-  ]
+  ],
+  // providers: [LoggingService]
 })
 export class SharedModule {
 }

@@ -20,14 +20,16 @@ const recipeResolver: ResolveFn<any> =
     };
 
 const routes: Routes = [
-  { path: 'recipes', component: RecipesComponent,
+  {
+    path: '', component: RecipesComponent,
     canActivate: [AuthGuard],
     children: [
     { path: '', component: RecipeStartComponent },
     { path: 'new', component: RecipeEditComponent },
     { path: ':id', component: RecipeDetailComponent, resolve: { data: recipeResolver } },
     { path: ':id/edit', component: RecipeEditComponent, resolve: { data: recipeResolver } },
-  ] }
+    ]
+  }
 ];
 
 @NgModule({

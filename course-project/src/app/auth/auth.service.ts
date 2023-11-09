@@ -3,9 +3,9 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject, catchError, tap, throwError } from "rxjs";
 import { User } from "./user.model";
 import { Router } from "@angular/router";
-import { environment } from "src/environments/environment.development";
+import { environment } from "src/environments/environment";
 
-const API_KEY = environment.apiUrl;
+const API_KEY = environment.apiKey;
 
 export interface AuthResponseData {
   kind?: string;

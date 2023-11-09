@@ -32,7 +32,19 @@ import { Component } from '@angular/core';
       })),
       transition('normal => highlighted', animate(300)),
       transition('highlighted => normal', animate(800)),
-      transition('shrunken <=> *', animate(500))
+      transition('shrunken <=> *', [
+        // style({
+        //   'background-color': 'orange',
+        //   borderRadius: '0'
+        // }),
+        style({
+          borderRadius: '0'
+        }),
+        animate(1000, style({
+          borderRadius: '50px'
+        })),
+        animate(500)
+      ])
     ])
   ]
 })

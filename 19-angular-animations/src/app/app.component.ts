@@ -45,7 +45,26 @@ import { Component } from '@angular/core';
         })),
         animate(500)
       ])
-    ])
+    ]),
+    trigger('listOne', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100px)'
+        }),
+        animate(300)
+      ]),
+      transition('* => void', [
+        animate(300, style({
+          opacity: 0,
+          transform: 'translateX(100px)'
+        }))
+      ]),
+    ]),
   ]
 })
 export class AppComponent {
@@ -64,5 +83,9 @@ export class AppComponent {
 
   onAdd(item) {
     this.list.push(item);
+  }
+
+  onDelete(item) {
+    this.list.splice(this.list.indexOf(item), 1);
   }
 }
